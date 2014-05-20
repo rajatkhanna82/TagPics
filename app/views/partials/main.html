@@ -1,0 +1,31 @@
+<div ng-include="'partials/navbar'"></div>
+
+  
+  <input type="text" ng-model="search" ng-change='change()' placeholder="Search"></input>
+     <input type="text" ng-model="images[currentIndex].tags" placeholder="Add Tags"></input>
+   
+<div class='container'>
+  
+    <div id='displayImage'>
+      <img class='currentImage' ng-src="{{images[currentIndex].pathname}}">
+      <span class='caption' >
+      <h3 class='captionText'>{{images[currentIndex].tags}}</h3>
+      </span>
+      <button class='prev' style = 'inline' ng-click='prev()'>prev</button>
+      <button class="next" style = 'inline' ng-click='next()'>next</button>
+    </div>
+</div>
+<div id='thumbWrapper'>
+  <div id='thumbList'>
+    <div class ='mythumbnail' ng-repeat="image in images">
+         <img  ng-click='openImage(image)'class="thumbImage" ng-src="{{image.pathname}}"> 
+    </div>
+   
+  </div>
+    
+</div>
+      
+<div class="footer">
+  <p>♥ from Rajat Khanna</p>
+</div>
+
