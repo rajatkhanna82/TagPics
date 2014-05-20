@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hackathonApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http, ImageFactory) {
     $scope.currentIndex  = 0;
     $http.get('/api/images').success(function(images) {
       $scope.tempImgs = images; 
@@ -47,6 +47,10 @@ angular.module('hackathonApp')
           $scope.images = $scope.tempImgs;
       }
     };
+    $scope.onTagChange = function(){
+      ImageFactory.update($scope.images[$scope.currentIndex]);
+       
+    };
    
     
     $scope.images = $scope.tempImgs;
@@ -55,4 +59,20 @@ angular.module('hackathonApp')
 
     });
   });
+
+
+
+angular.module('hackathonApp')
+  .factory('ImageFactory', function ($resource) {
+    return $resource('/api/images', {
+      id: '@id'
+    }, { //parameters default
+      update: {
+        method: 'POST',
+        params: {}
+      },
+   
+    });
+  });
+
 
