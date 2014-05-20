@@ -27,7 +27,29 @@ body {
   padding: 0px;
   /*max-width: 830px;*/
 }
+.update {
+  float: right;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  height: 37px;
+  background-color: #428bca;
+  color: white;
+}
+.addTags{
+  padding-left: 10px;
+  border-radius: 16px;
+  height: 30px;
+  float: right;
+  margin-right: 10px;
+}
+.search{
+  padding-left: 10px;
+  border-radius: 16px;
+  height: 30px;
+  margin-left: 10px;
 
+}
 #displayImage{
   width: 100%;
   margin: auto;
@@ -89,7 +111,7 @@ margin: 0px;
 }
 span.caption {
 position: absolute;
-top: 120px;
+top: 150px;
 left:100px;
   
 }
