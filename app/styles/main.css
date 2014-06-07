@@ -42,12 +42,14 @@ body {
   height: 30px;
   float: right;
   margin-right: 10px;
+  width:20%;
 }
 .search{
   padding-left: 10px;
   border-radius: 16px;
   height: 30px;
   margin-left: 10px;
+  width:20%;
 
 }
 #displayImage{
